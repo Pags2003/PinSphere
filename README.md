@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pinterest Clone
 
-## Getting Started
+## Overview
+This is a full-stack Pinterest clone web application built using modern web technologies. The project is based on a YouTube tutorial that guides you through the development process, focusing on user authentication, image uploads, and interactive UI components.
 
-First, run the development server:
+## Features
+- **User Authentication**: Sign up and log in using Google authentication via NextAuth.js and Firebase.
+- **Pin Creation**: Upload images or videos, add descriptions, and save them as pins.
+- **Pin Display**: View pins in a masonry-style layout for a visually appealing user experience.
+- **Pin Details**: Click on a pin to see an enlarged view along with its description and creator information.
+- **User Profiles**: Each user has a profile page displaying their created and saved pins.
+- **Image Uploads**: Store images securely in Firebase Storage.
+- **Data Management**: Store user details and pin information in Firestore.
+- **Responsive Design**: Optimized for both desktop and mobile devices using Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Technologies Used
+- **Next.js 13**: A React framework with server-side rendering and SEO optimizations.
+- **Tailwind CSS**: Utility-first CSS framework for efficient styling.
+- **Firebase**:
+  - Firestore: Database for storing user and pin data.
+  - Firebase Storage: Secure storage for images and videos.
+  - Firebase Authentication: Handles user login and authentication.
+- **NextAuth.js**: Authentication library for Next.js applications.
+- **React Icons**: Collection of ready-to-use icons for UI enhancement.
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js and npm installed on your machine
+- Firebase account setup
+- Google Cloud project for authentication (OAuth credentials)
+
+### Steps to Run the Project Locally
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/your-username/pinterest-clone.git
+   cd pinterest-clone
+   ```
+2. **Install Dependencies**
+   ```sh
+   npm install
+   ```
+3. **Set Up Firebase**
+   - Create a new Firebase project.
+   - Enable Firestore and Firebase Storage.
+   - Set up Firebase Authentication with Google Sign-In.
+   - Retrieve Firebase config credentials.
+4. **Set Up Environment Variables**
+   Create a `.env.local` file and add the required credentials:
+   ```env
+   NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-auth-domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+   GOOGLE_CLIENT_ID=your-google-client-id
+   GOOGLE_CLIENT_SECRET=your-google-client-secret
+   NEXTAUTH_URL=http://localhost:3000
+   ```
+5. **Run the Development Server**
+   ```sh
+   npm run dev
+   ```
+   The application should now be running at `http://localhost:3000`.
+
+## Project Structure
+```
+📦 pinterest-clone
+├── 📂 components       # Reusable React components
+├── 📂 pages            # Next.js pages (home, login, profile, etc.)
+├── 📂 styles           # Tailwind CSS styles
+├── 📂 utils            # Helper functions and Firebase configurations
+├── .env.local          # Environment variables (not included in repo)
+├── next.config.js      # Next.js configuration
+├── package.json        # Project dependencies
+└── README.md           # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
