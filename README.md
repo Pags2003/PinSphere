@@ -1,7 +1,7 @@
 # Pinterest Clone
 
 ## Overview
-This is a full-stack Pinterest clone web application built using modern web technologies. The project is based on a YouTube tutorial that guides you through the development process, focusing on user authentication, image uploads, and interactive UI components.
+A full-stack Pinterest clone web application built using modern web technologies, focusing on user authentication, image uploads, and interactive UI components.
 
 ## Features
 - **User Authentication**: Sign up and log in using Google authentication via NextAuth.js and Firebase.
